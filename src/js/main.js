@@ -10,4 +10,5 @@ window.addEventListener('DOMContentLoaded', () => {
   sliders('.main-slider-item', 'vertical');
 
   forms();
+
 });

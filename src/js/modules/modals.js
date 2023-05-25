@@ -92,13 +92,13 @@ const modals = () => {
     return scrollWidth;
   }
   // ==========================
-  // Открытие попапа в конце станицы, если если ни разу не была нажата кнопка с попапом
+  // Открытие попапа в конце станицы, если ни разу не была нажата кнопка с попапом
 
   function openByScroll(selector) {
     window.addEventListener('scroll', () => {
       if (
         !btnPressed &&
-        window.pageYOffset + document.documentElement.clientHeight >=
+        window.scrollY + document.documentElement.clientHeight >=
           document.documentElement.scrollHeight
       ) {
         document.querySelector(selector).click();
@@ -113,7 +113,7 @@ const modals = () => {
   openByScroll('.fixed-gift');
 
   // Показать модальное окно через 60сек
-  // showModalByTime('.popup-consultation', 60000);
+  // showModalByTime('.popup-consultation', 6000);
 
   // Модальное окно — калькулятор
 };

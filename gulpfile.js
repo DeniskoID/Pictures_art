@@ -4,10 +4,10 @@ const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const browsersync = require('browser-sync');
 
-// const dist = './dist/';
+const dist = './dist/';
 
 // Для теста на OpenServer
-const dist = 'C:/OSPanel/domains/PicsArt';
+// const dist = 'C:/OSPanel/domains/PicsArt';
 
 gulp.task('copy-html', () => {
   return gulp.src('./src/index.html').pipe(gulp.dest(dist)).pipe(browsersync.stream());

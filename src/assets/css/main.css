@@ -68,7 +68,7 @@ h4 {
   font-family: 'Circe Extra Bold', sans-serif;
 }
 .p15 {
-  font-size: 1.5;
+  font-size: 1.5rem;
 }
 .p-heading {
   font-size: 2.2rem;
@@ -99,7 +99,7 @@ h4 {
 }
 .button-order {
   background-image: linear-gradient(66deg, #a12ab1 0%, #c818bc 100%);
-  box-shadow: 0px 15px 30px 0px rgba(170, 38, 183, 0.39);
+  box-shadow: 0 15px 30px 0 rgba(170, 38, 183, 0.39);
   font-size: 1.5rem;
   padding: 1.5rem 2rem;
   color: #ffffff;
@@ -156,8 +156,7 @@ h4 {
 }
 .header-menu li {
   display: inline-block;
-  padding: 2rem 1.5rem;
-  padding-right: 3rem;
+  padding: 2rem 3rem 2rem 1.5rem;
   font-size: 1.5rem;
 }
 .header-menu li a {
@@ -623,9 +622,7 @@ h4 {
   justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 0;
-  margin-top: 6rem;
-  margin-bottom: 5rem;
+  margin: 6rem 0 5rem;
 }
 .portfolio ul li {
   font-size: 2rem;
@@ -1577,7 +1574,7 @@ h4 {
     font-size: 1.5rem;
   }
   .main-features {
-    max-width: auto;
+    max-width: 100%;
     margin-left: 20%;
   }
   .main-slider-btn {
@@ -1727,3 +1724,4 @@ h4 {
     width: 25rem;
   }
 }
+
