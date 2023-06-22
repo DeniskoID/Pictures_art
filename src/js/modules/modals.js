@@ -1,11 +1,24 @@
 const modals = () => {
   let btnPressed = false;
 
-  function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false) {
-    const trigger = document.querySelectorAll(triggerSelector);
-    const modal = document.querySelector(modalSelector);
-    const close = document.querySelector(closeSelector);
-    const windows = document.querySelectorAll('[data-modal]');
+  function bindModal(
+    triggerSelector,
+    modalSelector,
+    closeSelector,
+    destroy = false,
+  ) {
+    const trigger = document.querySelectorAll(
+      triggerSelector,
+    );
+    const modal = document.querySelector(
+      modalSelector,
+    );
+    const close = document.querySelector(
+      closeSelector,
+    );
+    const windows = document.querySelectorAll(
+      '[data-modal]',
+    );
 
     const scroll = calcScroll();
 
@@ -23,7 +36,10 @@ const modals = () => {
 
         windows.forEach((item) => {
           item.style.display = 'none';
-          item.classList.add('animated', 'fadeIn');
+          item.classList.add(
+            'animated',
+            'fadeIn',
+          );
         });
 
         modal.style.display = 'block';
@@ -61,14 +77,21 @@ const modals = () => {
     setTimeout(() => {
       let display;
 
-      document.querySelectorAll('[data-modal]').forEach((item) => {
-        if (getComputedStyle(item).display !== 'none') {
-          display = 'block';
-        }
-      });
+      document
+        .querySelectorAll('[data-modal]')
+        .forEach((item) => {
+          if (
+            getComputedStyle(item).display !==
+            'none'
+          ) {
+            display = 'block';
+          }
+        });
 
       if (!display) {
-        document.querySelector(selector).style.display = 'block';
+        document.querySelector(
+          selector,
+        ).style.display = 'block';
         document.body.style.overflow = 'hidden';
         let scroll = calcScroll();
         document.body.style.marginRight = `${scroll}px`;
@@ -86,7 +109,8 @@ const modals = () => {
     div.style.visibility = 'hidden';
 
     document.body.appendChild(div);
-    let scrollWidth = div.offsetWidth - div.clientWidth;
+    let scrollWidth =
+      div.offsetWidth - div.clientWidth;
     div.remove();
 
     return scrollWidth;
@@ -98,7 +122,8 @@ const modals = () => {
     window.addEventListener('scroll', () => {
       if (
         !btnPressed &&
-        window.scrollY + document.documentElement.clientHeight >=
+        window.scrollY +
+          document.documentElement.clientHeight >=
           document.documentElement.scrollHeight
       ) {
         document.querySelector(selector).click();
@@ -107,13 +132,26 @@ const modals = () => {
   }
   // ==========================
 
-  bindModal('.button-design', '.popup-design', '.popup-design .popup-close');
-  bindModal('.button-consultation', '.popup-consultation', '.popup-consultation .popup-close');
-  bindModal('.fixed-gift', '.popup-gift', '.popup-gift .popup-close', true);
+  bindModal(
+    '.button-design',
+    '.popup-design',
+    '.popup-design .popup-close',
+  );
+  bindModal(
+    '.button-consultation',
+    '.popup-consultation',
+    '.popup-consultation .popup-close',
+  );
+  bindModal(
+    '.fixed-gift',
+    '.popup-gift',
+    '.popup-gift .popup-close',
+    true,
+  );
   openByScroll('.fixed-gift');
 
   // Показать модальное окно через 60сек
-  // showModalByTime('.popup-consultation', 6000);
+  showModalByTime('.popup-consultation', 6000);
 
   // Модальное окно — калькулятор
 };
